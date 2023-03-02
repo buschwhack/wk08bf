@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ocars</title>
+  <title>books</title>
   <link rel="stylesheet" href="/ui.css">
 </head>
 
@@ -17,21 +17,22 @@
   
   <div class="container">
 
-    <% bookdata.forEach( (book)=> { %>
+  
+      <% bookdata.forEach( (book) => {    %>
+        
+        <div class="simplecard">  
+            <a href="/book?bid=<%= book.id %>"> 
+              <div class="title"> 
+                <%= book.book_name %> 
+              </div>
+              <div>
+                <%= book.release_yr %>
+              </div>
+            </a>
+        </div>
 
-      <div class="simplecard">
-        <a href="/book?bid=<%= book.id %>">
-          <div class="title">
-            <%= book.book_name %>
-          </div>
-          <div>
-            <%= book.yr_launch %>
-          </div>
-        </a>
-      </div>
-
-    <% }); %>
-
+      <% });  %>
+   
     
   </div>
 </body>
@@ -39,19 +40,3 @@
 </html>
 
 
-<!--<div class="card">
-        <figure class="card__img-wrapper">
-          <img src="https://codyhouse.co/app/assets/img/card-img-1.jpg" alt="Image description">
-        </figure>
-      
-        <div class="card__content">
-          <h4>I have a dream</h4>
-      
-          <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-          
-          <footer>
-            <a href="#0" class="card__btn cd-btn cd-btn--primary">Read more</a>
-          </footer>
-        </div>
-      </div>
-    -->

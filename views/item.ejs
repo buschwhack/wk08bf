@@ -1,31 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ocars</title>
-    <link rel="stylesheet" href="/ui.css">
-  </head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>books</title>
+  <link rel="stylesheet" href="/ui.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>List of Books</h1>
+  </header>
   
-  <body>
-    <header>
-      <h2>Book Details</h2>
-    </header>
-    
-    <div class="item">
-        <% bookrow.forEach( (row)=> { %>
+  <div class="item">
 
-            <h3><%= row.book_name %></h3>
-            <p>written by: <%= row.author  %></p>
-            <p>published: <%= row.release_yr  %></p>
-            <div>
-                <img class="simplecard" src="<%= row.img_path %>">
-            </div>
-
-        <% }); %>
-
-        <a href="/" class="cd-btn">back</a>
+  
+      <% bookdeets.forEach( (book) => {    %>
         
-    </div>
+        <div class="simplecard">  
+            
+              <div class="title"> 
+                <%= book.book_name %> 
+              </div>
+              <div>
+                <img src="<%= book.img_path %>">
+              </div>
+              <div>
+                <%= book.release_yr %>
+              </div>
+              <div>
+                written by: <%= book.author  %>
+              </div>
+              <div> 
+                Published by: <%= book.publisher %> 
+               </div>
+  
+        </div>
+
+      <% });  %>
+   
+
+      <div>
+        <h3>characters in book</h3>
+
+       <% bookchars.forEach( (row) =>{  %>
+
+            <div> <%= row.name  %>  </div>
+
+       <% } );  %>
+
+      </div>
+
+
+    <a href="/" class="cd-btn--primary"> BACK </a>
+
+  </div>
 
 </body>
+
 </html>
+
+
